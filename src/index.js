@@ -1,6 +1,17 @@
 import PolynomialRegression from 'ml-regression-polynomial';
 
-export default function baselineCorrection(x, y, options = {}) {
+/**
+ * Iterative regression-based baseline correction
+ * @param {Array<number>} x
+ * @param {Array<number>} y
+ * @param {object} [options]
+ * @param {object} [options.maxIterations = 100]
+ * @param {object} [options.regressionFunction = PolynomialRegression]
+ * @param {object} [options.regressionOptions]
+ * @param {object} [options.tolerance = 0.001]
+ * @return {{correctedAns: Array, error: *, iteration: number}}
+ */
+export default function (x, y, options = {}) {
     let {
         maxIterations = 100,
         regressionFunction = PolynomialRegression,
