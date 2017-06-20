@@ -6,7 +6,7 @@
   [![David deps][david-image]][david-url]
   [![npm download][download-image]][download-url]
 
-Iterative regression based baseline correction.
+Iterative regression-based baseline correction.
 
 ## Installation
 
