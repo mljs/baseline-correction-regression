@@ -6,44 +6,44 @@ import PolynomialRegression from 'ml-regression-polynomial';
  * @param {Array<number>} y - Dependent axis variable
  * @param {object} [options] - Options object
  * @param {number} [options.maxIterations = 100] - Maximum number of allowed iterations
- * @param {function} [options.regressionFunction = PolynomialRegression] - Regression class with a predict method
+ * @param {function} [options.Regression = PolynomialRegression] - Regression class with a predict method
  * @param {*} [options.regressionOptions] - Options for regressionFunction
  * @param {number} [options.tolerance = 0.001] - Convergence error tolerance
- * @return {{correctedAns: Array<number>, error: number, iteration: number, baseline: Array<number>}}
+ * @return {{corrected: Array<number>, delta: number, iteration: number, baseline: Array<number>}}
  */
 export default function (x, y, options = {}) {
     let {
         maxIterations = 100,
-        regressionFunction = PolynomialRegression,
+        Regression = PolynomialRegression,
         regressionOptions,
         tolerance = 0.001
     } = options;
 
-    if (!regressionOptions && regressionFunction === PolynomialRegression) {
+    if (!regressionOptions && Regression === PolynomialRegression) {
         regressionOptions = 3;
     }
 
     let baseline = y.slice();
-    let fitting = new Array(baseline.length);
+    let fitting = y.slice();
     let oldFitting = y;
     let iteration = 0;
-    let error;
+    let delta;
     while (iteration < maxIterations) {
         // Calculate the fitting result
-        let regression = new regressionFunction(x, baseline, regressionOptions);
+        let regression = new Regression(x, baseline, regressionOptions);
 
-        error = 0;
-        for (let i = 0; i < baseline.length; i++) {
+        delta = 0;
+        for (var i = 0; i < baseline.length; i++) {
             fitting[i] = regression.predict(x[i]);
             if (baseline[i] > fitting[i]) {
                 baseline[i] = fitting[i];
             }
 
-            error += Math.abs((fitting[i] - oldFitting[i]) / oldFitting[i]);
+            delta += Math.abs((fitting[i] - oldFitting[i]) / oldFitting[i]);
         }
 
         // Stop criterion
-        if (error < tolerance) {
+        if (delta < tolerance) {
             break;
         } else {
             oldFitting = fitting.slice();
@@ -52,10 +52,10 @@ export default function (x, y, options = {}) {
     }
 
     // removes baseline
-    let correctedAns = new Array(baseline.length);
-    for (let i = 0; i < baseline.length; i++) {
-        correctedAns[i] = y[i] - baseline[i];
+    let corrected = new Array(baseline.length);
+    for (var j = 0; j < baseline.length; j++) {
+        corrected[j] = y[j] - baseline[j];
     }
 
-    return {correctedAns, error, iteration, baseline};
+    return {corrected, delta, iteration, baseline};
 }

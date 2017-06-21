@@ -8,6 +8,8 @@
 
 Iterative regression-based baseline correction.
 
+The algorithm is based on the document [_Baseline correction by improved iterative polynomial fitting with automatic threshold_](https://doi.org/10.1016/j.chemolab.2005.08.009)
+
 ## Installation
 
 `$ npm install --save ml-baseline-correction-regression`
@@ -15,10 +17,11 @@ Iterative regression-based baseline correction.
 ## Usage
 
 ```js
-import library from 'ml-baseline-correction-regression';
+import baselineCorrection from 'ml-baseline-correction-regression';
 
-const result = library(args);
-// result is ...
+let time = [/* ... */];
+let originalSignal = [/* ... */];
+const {corrected, delta, iteration, baseline} = baselineCorrection(time, originalSignal);
 ```
 
 ## [API Documentation](https://mljs.github.io/baseline-correction-regression/)
