@@ -14,11 +14,13 @@ describe('Simulated', () => {
         let noisy = new Array(size);
         for (let i = 0; i < size; ++i) {
             times[i] = i;
-            original[i] = lorentzian(i, fourth) + 2 * lorentzian(i, 2 * fourth) + lorentzian(i, 3 * fourth);
+            original[i] = 8 * lorentzian(i, fourth) + 16 * lorentzian(i, 2 * fourth) + 8 * lorentzian(i, 3 * fourth);
             noisy[i] = original[i] + i;
         }
 
-        let {correctedAns} = baselineCorrection(times, noisy);
-        expect(correctedAns).toEqual(original);
+        let {error, iteration} = baselineCorrection(times, noisy);
+
+        expect(error).toBeLessThan(0.001);
+        expect(iteration).toBeLessThan(100);
     });
 });
