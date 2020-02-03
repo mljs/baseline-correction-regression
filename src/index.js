@@ -1,5 +1,5 @@
-import PolynomialRegression from 'ml-regression-polynomial';
-import { XY } from 'ml-spectra-processing';
+import PolynomialRegression from "ml-regression-polynomial";
+import { XY } from "ml-spectra-processing";
 
 /**
  * Iterative regression-based baseline correction
@@ -10,6 +10,8 @@ import { XY } from 'ml-spectra-processing';
  * @param {function} [options.Regression = PolynomialRegression] - Regression class with a predict method
  * @param {*} [options.regressionOptions] - Options for regressionFunction
  * @param {number} [options.tolerance = 0.001] - Convergence error tolerance
+ * @param {boolean} [options.reduce = true] - If true, the number of points is reduced to options.nbPoints to performes baseline fitting
+ * @param {number} [options.nbPoints = 4001] - Number of points of data input for baseline fitting if options.reduce is true.
  * @return {{corrected: Array<number>, delta: number, iteration: number, baseline: Array<number>}}
  */
 const baselineCorrection = function(x, y, options = {}) {
@@ -19,7 +21,7 @@ const baselineCorrection = function(x, y, options = {}) {
     regressionOptions,
     tolerance = 0.001,
     reduce = true,
-    nbPoints = 4001,
+    nbPoints = 4001
   } = options;
 
   if (!regressionOptions && Regression === PolynomialRegression) {
@@ -65,7 +67,7 @@ const baselineCorrection = function(x, y, options = {}) {
   }
 
   // removes baseline
-  if (reduce) baseline = x.map((e) => regression.predict(e));
+  if (reduce) baseline = x.map(e => regression.predict(e));
 
   let corrected = baseline.map((e, i) => y[i] - e);
 
