@@ -22,22 +22,31 @@ export default function baselineCorrectionRegression(x, y, options = {}) {
     tolerance = 0.001,
     reduce = true,
     nbPoints = 4001,
+    baselineZones = [],
   } = options;
 
   if (!regressionOptions && Regression === PolynomialRegression) {
     regressionOptions = 3;
   }
 
-  let xTemp, yTemp;
-  if (reduce) {
-    let reducedData = XY.reduce(x, y, { nbPoints });
-    yTemp = reducedData.y;
-    xTemp = reducedData.x;
+  let xTemp = [];
+  let yTemp = [];
+  if (baselineZones.length > 0) {
+    let rangeIndexs = checkOverlap(x, baselineZones);
+    rangeIndexs.forEach((range) => {
+      xTemp = xTemp.concat(x.slice(range.from, range.to + 1));
+      yTemp = yTemp.concat(y.slice(range.from, range.to + 1));
+    });
   } else {
     xTemp = x.slice();
     yTemp = y.slice();
   }
 
+  if (reduce) {
+    let reducedData = XY.reduce(xTemp, yTemp, { nbPoints });
+    yTemp = reducedData.y;
+    xTemp = reducedData.x;
+  }
   let baseline = yTemp.slice();
   let fitting = yTemp.slice();
   let oldFitting = yTemp.slice();
@@ -71,5 +80,36 @@ export default function baselineCorrectionRegression(x, y, options = {}) {
 
   let corrected = baseline.map((e, i) => y[i] - e);
 
-  return { corrected, delta, iteration, baseline };
+  return { corrected, delta, iteration, baseline, model: regression.toJSON };
 }
+
+const getCloseIndex = (array = [], goal = 0) => {
+  const closest = array.reduce((prev, curr) => {
+    return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev;
+  });
+  return array.indexOf(closest);
+};
+
+const checkOverlap = (x, array = []) => {
+  let ranges = [];
+  array.forEach((range) => {
+    let from = getCloseIndex(x, range.from);
+    let to = getCloseIndex(x, range.to);
+    if (from > to) [from, to] = [to, from];
+    ranges.push({ from, to });
+  });
+
+  ranges.sort((a, b) => a.from - b.from);
+
+  let stack = [ranges[0]];
+
+  ranges.slice(1).forEach((range) => {
+    let top = stack[stack.length - 1];
+    if (top.to < range.from) {
+      stack.push(range);
+    } else if (top.to < range.to) {
+      top.to = range.to;
+    }
+  });
+  return stack;
+};
