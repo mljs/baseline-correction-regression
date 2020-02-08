@@ -1,3 +1,17 @@
+# [0.3.0](https://github.com/mljs/baseline-correction-regression/compare/v0.2.0...v0.3.0) (2020-02-08)
+
+
+### Bug Fixes
+
+* change travis target to 12, 10 and 8 ([0103a46](https://github.com/mljs/baseline-correction-regression/commit/0103a46c43da30d97f8ba5f91b0dfe7469b63549))
+
+
+### Features
+
+* expose regression instance ([2c5bef1](https://github.com/mljs/baseline-correction-regression/commit/2c5bef130268a476790df417a1903d491dd3ebe0))
+
+
+
 # [0.2.0](https://github.com/mljs/baseline-correction-regression/compare/v0.1.0...v0.2.0) (2020-02-04)
 
 
