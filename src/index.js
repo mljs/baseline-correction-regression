@@ -28,9 +28,10 @@ export default function baselineCorrectionRegression(x, y, options = {}) {
   let oldFitting = y;
   let iteration = 0;
   let delta;
+  let regression;
   while (iteration < maxIterations) {
     // Calculate the fitting result
-    let regression = new Regression(x, baseline, regressionOptions);
+    regression = new Regression(x, baseline, regressionOptions);
 
     delta = 0;
     for (let i = 0; i < baseline.length; i++) {
@@ -57,5 +58,11 @@ export default function baselineCorrectionRegression(x, y, options = {}) {
     corrected[j] = y[j] - baseline[j];
   }
 
-  return { corrected, delta, iteration, baseline };
+  return {
+    corrected,
+    delta,
+    iteration,
+    baseline,
+    regression: regression,
+  };
 }

@@ -23,9 +23,10 @@ describe('Simulated', () => {
       noisy[i] = original[i] + i;
     }
 
-    let { delta, iteration } = baselineCorrection(times, noisy);
+    let { delta, iteration, regression } = baselineCorrection(times, noisy);
 
     expect(delta).toBeLessThan(0.001);
     expect(iteration).toBeLessThan(100);
+    expect(typeof regression.predict).toBe('function');
   });
 });
