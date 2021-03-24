@@ -1,10 +1,9 @@
 # baseline-correction-regression
 
-  [![NPM version][npm-image]][npm-url]
-  [![build status][travis-image]][travis-url]
-  [![Test coverage][codecov-image]][codecov-url]
-  [![David deps][david-image]][david-url]
-  [![npm download][download-image]][download-url]
+[![NPM version][npm-image]][npm-url]
+[![build status][ci-image]][ci-url]
+[![Test coverage][codecov-image]][codecov-url]
+[![npm download][download-image]][download-url]
 
 Iterative regression-based baseline correction.
 
@@ -12,7 +11,7 @@ The algorithm is based on the document [_Baseline correction by improved iterati
 
 ## Installation
 
-`$ npm install --save ml-baseline-correction-regression`
+`$ npm i ml-baseline-correction-regression`
 
 ## Usage
 
@@ -30,13 +29,11 @@ const {corrected, delta, iteration, baseline} = baselineCorrection(time, origina
 
   [MIT](./LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/ml-baseline-correction-regression.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/ml-baseline-correction-regression.svg
 [npm-url]: https://npmjs.org/package/ml-baseline-correction-regression
-[travis-image]: https://img.shields.io/travis/mljs/baseline-correction-regression/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/mljs/baseline-correction-regression
-[codecov-image]: https://img.shields.io/codecov/c/github/mljs/baseline-correction-regression.svg?style=flat-square
+[codecov-image]: https://img.shields.io/codecov/c/github/mljs/baseline-correction-regression.svg
 [codecov-url]: https://codecov.io/gh/mljs/baseline-correction-regression
-[david-image]: https://img.shields.io/david/mljs/baseline-correction-regression.svg?style=flat-square
-[david-url]: https://david-dm.org/mljs/baseline-correction-regression
-[download-image]: https://img.shields.io/npm/dm/ml-baseline-correction-regression.svg?style=flat-square
+[ci-image]: https://github.com/mljs/baseline-correction-regression/workflows/Node.js%20CI/badge.svg?branch=master
+[ci-url]: https://github.com/mljs/baseline-correction-regression/actions?query=workflow%3A%22Node.js+CI%22
+[download-image]: https://img.shields.io/npm/dm/ml-baseline-correction-regression.svg
 [download-url]: https://npmjs.org/package/ml-baseline-correction-regression
