@@ -63,6 +63,6 @@ export default function baselineCorrectionRegression(x, y, options = {}) {
     delta,
     iteration,
     baseline,
-    regression: regression,
+    regression,
   };
 }
