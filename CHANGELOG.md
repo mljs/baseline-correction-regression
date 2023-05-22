@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/mljs/baseline-correction-regression/compare/v1.0.1...v1.0.2) (2023-05-22)
+
+
+### Bug Fixes
+
+* mjs extension in rollup config ([a00d628](https://github.com/mljs/baseline-correction-regression/commit/a00d62874c382328b83c1057d7e135a607d18cd7))
+
 ## [1.0.1](https://github.com/mljs/baseline-correction-regression/compare/v1.0.0...v1.0.1) (2023-05-22)
 
 
