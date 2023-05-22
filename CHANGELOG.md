@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/mljs/baseline-correction-regression/compare/v1.0.0...v1.0.1) (2023-05-22)
+
+
+### Bug Fixes
+
+* add types n update dependencies ([#7](https://github.com/mljs/baseline-correction-regression/issues/7)) ([01fa6f4](https://github.com/mljs/baseline-correction-regression/commit/01fa6f47a745c8137559a04f3f0e2487cd82b1d3))
+
 ## [1.0.0](https://github.com/mljs/baseline-correction-regression/compare/v0.3.0...v1.0.0) (2021-03-24)
 
 # [0.3.0](https://github.com/mljs/baseline-correction-regression/compare/v0.2.0...v0.3.0) (2020-02-08)
@@ -27,6 +34,3 @@
 ### Features
 
 * initial implementation ([#1](https://github.com/mljs/baseline-correction-regression/issues/1)) ([b52d458](https://github.com/mljs/baseline-correction-regression/commit/b52d458))
-
-
-
