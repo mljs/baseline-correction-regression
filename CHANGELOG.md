@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.3](https://github.com/mljs/baseline-correction-regression/compare/v1.0.2...v1.0.3) (2024-05-06)
+
+
+### Bug Fixes
+
+* import correctly PolynomialRegression ([e082126](https://github.com/mljs/baseline-correction-regression/commit/e082126cc0f00167e400dfe4fadf306debe80278))
+* new version with updated dependencies ([a5251a4](https://github.com/mljs/baseline-correction-regression/commit/a5251a487ca3a86ea31bcb0385fba3b0e0baa4bf))
+
 ## [1.0.2](https://github.com/mljs/baseline-correction-regression/compare/v1.0.1...v1.0.2) (2023-05-22)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "ml-baseline-correction-regression",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Iterative regression based baseline correction",
   "main": "lib/index.js",
   "types": "ml-baseline-correction-regression.d.ts",
