@@ -1,4 +1,4 @@
-import PolynomialRegression from 'ml-regression-polynomial';
+import { PolynomialRegression } from 'ml-regression-polynomial';
 
 /**
  * Iterative regression-based baseline correction
