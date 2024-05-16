@@ -1,4 +1,4 @@
-import baselineCorrection from '..';
+import { baselineCorrectionRegression } from '..';
 
 // https://en.wikipedia.org/wiki/Cauchy_distribution
 function lorentzian(x, x0 = 0, gamma = 1) {
@@ -23,7 +23,7 @@ describe('Simulated', () => {
       noisy[i] = original[i] + i;
     }
 
-    let { delta, iteration, regression } = baselineCorrection(times, noisy);
+    let { delta, iteration, regression } = baselineCorrectionRegression(times, noisy);
 
     expect(delta).toBeLessThan(0.001);
     expect(iteration).toBeLessThan(100);

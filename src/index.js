@@ -11,7 +11,7 @@ import { PolynomialRegression } from 'ml-regression-polynomial';
  * @param {number} [options.tolerance = 0.001] - Convergence error tolerance
  * @return {{corrected: Array<number>, delta: number, iteration: number, baseline: Array<number>}}
  */
-export default function baselineCorrectionRegression(x, y, options = {}) {
+export function baselineCorrectionRegression(x, y, options = {}) {
   let {
     maxIterations = 100,
     Regression = PolynomialRegression,
