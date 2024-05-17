@@ -1,8 +1,12 @@
 declare module 'ml-baseline-correction-regression' {
   class Regression {
-    constructor(x: number[] | Float64Array, y: number[] | Float64Array, options: Record<string, any>);
+    constructor(
+      x: number[] | Float64Array,
+      y: number[] | Float64Array,
+      options: Record<string, any>,
+    );
 
-    predict(x: number): number
+    predict(x: number): number;
   }
   export interface BaseLineRegressionOptions {
     /**
@@ -22,19 +26,18 @@ declare module 'ml-baseline-correction-regression' {
     /**
      * Convergence error tolerance
      */
-    tolerance?: number,
-    
+    tolerance?: number;
   }
 
-  export default function baselineCorrectionRegression(
+  export function baselineCorrectionRegression(
     x: number[] | Float64Array,
     y: number[] | Float64Array,
     options?: BaseLineRegressionOptions,
   ): {
-    corrected: number[] | Float64Array,
-    baseline: number[] | Float64Array,
-    iteration: number,
-    delta: number
-    regression: Regression
+    corrected: number[] | Float64Array;
+    baseline: number[] | Float64Array;
+    iteration: number;
+    delta: number;
+    regression: Regression;
   };
 }
