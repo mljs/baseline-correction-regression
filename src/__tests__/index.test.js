@@ -23,7 +23,10 @@ describe('Simulated', () => {
       noisy[i] = original[i] + i;
     }
 
-    let { delta, iteration, regression } = baselineCorrectionRegression(times, noisy);
+    let { delta, iteration, regression } = baselineCorrectionRegression(
+      times,
+      noisy,
+    );
 
     expect(delta).toBeLessThan(0.001);
     expect(iteration).toBeLessThan(100);
