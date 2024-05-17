@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/mljs/baseline-correction-regression/compare/v1.0.3...v2.0.0) (2024-05-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* update dependencies and remove default export
+
+### Bug Fixes
+
+* update dependencies and remove default ([e6ca823](https://github.com/mljs/baseline-correction-regression/commit/e6ca823b31c4e043181ebcc85bc3bf8b2a4803f2))
+
+
+### Miscellaneous Chores
+
+* update dependencies and remove default export ([3dac847](https://github.com/mljs/baseline-correction-regression/commit/3dac847ff5d96d42ec87e00bd8deac50f818a680))
+
 ## [1.0.3](https://github.com/mljs/baseline-correction-regression/compare/v1.0.2...v1.0.3) (2024-05-06)
 
 
