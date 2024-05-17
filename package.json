@@ -40,6 +40,6 @@
     "rollup": "^4.17.2"
   },
   "dependencies": {
-    "ml-regression-polynomial": "^3.0.0"
+    "ml-regression-polynomial": "^3.0.1"
   }
 }
