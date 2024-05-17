@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/mljs/baseline-correction-regression/compare/v2.0.0...v2.0.1) (2024-05-17)
+
+
+### Bug Fixes
+
+* TS definition ([ee8464e](https://github.com/mljs/baseline-correction-regression/commit/ee8464e15d95716fcc268df4e88afa9b2e16305a))
+
 ## [2.0.0](https://github.com/mljs/baseline-correction-regression/compare/v1.0.3...v2.0.0) (2024-05-17)
 
 
