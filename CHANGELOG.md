@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/mljs/baseline-correction-regression/compare/v2.0.1...v2.0.2) (2026-05-01)
+
+
+### Bug Fixes
+
+* update dependencies ([#13](https://github.com/mljs/baseline-correction-regression/issues/13)) ([654bb1c](https://github.com/mljs/baseline-correction-regression/commit/654bb1cac97cabe9c3ba7bbb2b231291b8fec945))
+
 ## [2.0.1](https://github.com/mljs/baseline-correction-regression/compare/v2.0.0...v2.0.1) (2024-05-17)
 
 
