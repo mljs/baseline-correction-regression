@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { baselineCorrectionRegression } from '..';
 
 // https://en.wikipedia.org/wiki/Cauchy_distribution
